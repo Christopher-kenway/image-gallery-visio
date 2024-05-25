@@ -1,0 +1,44 @@
+.hero{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+
+.hero-content{
+  display: inline-block;
+  flex-direction: column;
+}
+
+.hero__img, .img2{
+  border-bottom-right-radius: 40%;
+  border-top-right-radius: 40%;
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  transition: border-radius .5s ease-out;
+}
+
+.img2{
+  border-top-left-radius: 40%;
+}
+
+.hero__img:hover{
+  transform: scale(1.1);
+  object-fit: cover;
+  border-radius: 5px;
+  
+}
+
+.btn{
+  border: 2px solid;
+  border-radius: 2px;
+}
+
+.text__info{
+  text-wrap: wrap;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+
+}
