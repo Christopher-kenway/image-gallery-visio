@@ -9,7 +9,7 @@ const Signup = () => {
   // Define state variables for email and password
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [displayName, setDisplayName] = useState("");
 
   // Hook to navigate to a different route
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password, username);
+      await createUserWithEmailAndPassword(auth, email, password);
       navigate("/"); // Navigate to '/' after successful signup
     } catch (error) {
       const errorCode = error.code;
@@ -47,9 +47,9 @@ const Signup = () => {
                   <span className="label-text">Username</span>
                 </label>
                 <input
-                  type="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  type="text"
+                  value={displayName}
+                  onChange={(e) => setDisplayName(e.target.value)}
                   placeholder="Username"
                   className="input input-bordered"
                   required

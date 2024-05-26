@@ -1,0 +1,32 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Start with opacity 0 */
+  visibility: hidden; /* Start with visibility hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transition for opacity and visibility */
+}
+
+.backdrop.show {
+  opacity: 1; /* Set opacity to 1 when show class is added */
+  visibility: visible; /* Set visibility to visible when show class is added */
+}
+
+.backdrop img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  transform: scale(0.7);
+  transition: transform 0.3s ease; /* Added transition for transform */
+}
+
+.backdrop.show img {
+  transform: scale(1); /* Scale image to 1 when modal is shown */
+}

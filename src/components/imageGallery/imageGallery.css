@@ -1,5 +1,4 @@
 .image__grid{
-  border: 1px solid blue;
   display: grid;
   align-items: center;
   justify-content: center;

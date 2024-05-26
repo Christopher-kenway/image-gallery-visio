@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./imageGallery.css";
 import useFirestore from "../../hooks/useFirestore";
 import ImageCard from "../imageCard/ImageCard"; // Make sure the path to ImageCard is correct
-import Modal from "../modal/Modal";
+import Modal from "../modals/Modal";
 
 const ImageGallery = () => {
   const { docs, isLoading } = useFirestore("images"); // Fetch images from the 'images' collection
@@ -25,7 +25,9 @@ const ImageGallery = () => {
           ))}
         </div>
       )}
-      {selectedImg && <Modal selectedImg={selectedImg} />}
+      {selectedImg && (
+        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </div>
   );
 };

@@ -1,17 +1,18 @@
 .image__card{
 display: flex;
 flex-direction: column;
-align-items: center;
-justify-content: center;
-border: 1px solid green;
 margin: 1rem auto;
+border-radius: 15px;
+
 }
 
 
 .card__img{
-  border: 1px solid red;
+  border-radius: 15px;
   overflow: hidden;
   width: 400px;
   height: 400px;
   object-fit: cover;
+  cursor: pointer;
+  opacity: .9;
 }

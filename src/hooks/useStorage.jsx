@@ -18,7 +18,7 @@ const useStorage = () => {
   const myRef = useRef(null);
   console.log(user);
   // Function to start the file upload
-  const startUpload = async (file) => {
+  const startUpload = async (file, title, description, username) => {
     if (!file) {
       setError("No file selected.");
       return;
@@ -58,6 +58,8 @@ const useStorage = () => {
               createdAt: new Date(),
               userEmail: user.email,
               displayName: user.displayName,
+              title: title,
+              description: description,
             });
             console.log("Document successfully written!");
           } catch (error) {
