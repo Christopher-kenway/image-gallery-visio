@@ -1,0 +1,87 @@
+.sign__hero-content {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  
+  border-radius: 15px;
+ 
+}
+
+
+.sign__hero-content h1 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  animation: title-enter 1.5s ease-in-out forwards;
+}
+
+@keyframes title-enter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sign__hero-content p {
+  font-size: 1.2rem; 
+  line-height: 1.5; 
+  animation: description-enter 0.5s ease-in-out 0.2s forwards;
+}
+
+@keyframes description-enter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card styling */
+.sign__card{
+  background-color: #ffffff; 
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px; 
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  animation: card-enter 1s ease-in-out forwards; 
+}
+
+@keyframes card-enter {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Form control styling */
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #7296a4;
+  box-shadow: 0px 0px 3px rgba(255, 51, 218, 0.2);
+}
+
+/* Button styling */
+.sign__btn {
+  background-color: #7296a4; 
+  padding: .5rem;
+  color: #fff; 
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out; 
+}
+
+.sign__btn:hover {
+  background-color: #33abad;
+}

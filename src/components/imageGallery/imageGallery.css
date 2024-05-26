@@ -1,6 +1,8 @@
 .image__grid{
+  border: 1px solid blue;
   display: grid;
-  gap: 4rem;
-
-  
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }

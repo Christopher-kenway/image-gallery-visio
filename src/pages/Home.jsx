@@ -12,7 +12,7 @@ const Home = ({ setTerm }) => {
     <div>
       <Navbar searchText={(text) => setTerm(text)} />
       <Herosection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

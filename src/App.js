@@ -7,10 +7,12 @@ import Create from "./pages/Create";
 import { AuthProvider } from "./context/Auth";
 import PublicRoutes from "./routes/PublicRoutes";
 import PrivateRoutes from "./routes/PrivateRoutes";
+import './App.css'
 
 function App() {
   return (
     <AuthProvider>
+     
       <div className="max-w-7xl mx-auto">
         <Routes>
           <Route path="/" element={

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   getStorage,
   ref,
@@ -6,8 +6,8 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
-import { useAuth } from "../hooks/useAuth"; // Make sure this import path is correct
-import { db } from "../firebase/firebaseConfig"; // Make sure this import path is correct
+import { useAuth } from "../hooks/useAuth";
+import { db } from "../firebase/firebaseConfig";
 
 const useStorage = () => {
   // State variables to track upload progress, errors, and download URL
@@ -15,6 +15,7 @@ const useStorage = () => {
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
   const { user } = useAuth();
+  const myRef = useRef(null);
   console.log(user);
   // Function to start the file upload
   const startUpload = async (file) => {
@@ -56,6 +57,7 @@ const useStorage = () => {
               imageUrl: downloadURL,
               createdAt: new Date(),
               userEmail: user.email,
+              displayName: user.displayName,
             });
             console.log("Document successfully written!");
           } catch (error) {

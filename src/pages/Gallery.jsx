@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/navbar/Navbar";
 import ImageGallery from "../components/imageGallery/ImageGallery";
+
 const Gallery = () => {
   // const onsubmit = (e) => {
   //   e.preventDefault();
@@ -17,7 +18,6 @@ const Gallery = () => {
           placeholder="Search"
           className="input input-bordered w-24 md:w-auto"
         ></input>
-        <button type="submit">Search</button>
       </form>
 
       <ImageGallery />

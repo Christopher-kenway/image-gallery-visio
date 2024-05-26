@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import firebaseApp from './firebase/firebaseConfig';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // import { Provider } from 'react-redux';
 // import { store } from './redux/store';

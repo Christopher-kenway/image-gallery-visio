@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { auth } from "../firebase/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import useStorage from "../hooks/useStorage";
+import "../pages styles/Signup.css";
 
 const Signup = () => {
   // Define state variables for email and password
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
   // Hook to navigate to a different route
   const navigate = useNavigate();
@@ -15,7 +18,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password, username);
       navigate("/"); // Navigate to '/' after successful signup
     } catch (error) {
       const errorCode = error.code;
@@ -27,19 +30,31 @@ const Signup = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col">
+      <form onSubmit={handleSubmit} className="hero min-h-screen">
+        <div className="sign__hero-content flex-col">
           <div className="text-center">
-            <h1 className="text-5xl font-bold">visio</h1>
+            <h1 className="font-bold mt-1">visio</h1>
             <p className="py-6">
               "Go beyond storage. Organize, personalize & share - your photos,
               your story."
             </p>
           </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="sign__card shrink-0 w-full max-w-sm">
             <div className="card-body">
               {" "}
-              {/* Removed redundant nested form */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Username</span>
+                </label>
+                <input
+                  type="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Username"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -67,7 +82,7 @@ const Signup = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="sign__btn">
                   Sign Up
                 </button>
               </div>

@@ -1,0 +1,17 @@
+.create__wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.img__details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;  
+}
+.create__form-control{
+  width: 40rem;
+}
