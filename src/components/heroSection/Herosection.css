@@ -78,7 +78,7 @@
   }
 }
 
-/* Small devices (phones, 320px and up) */
+/* Small devices  */
 @media only screen and (max-width: 320px) {
   .hero__img{
     width: 80px;
@@ -106,7 +106,7 @@
   }
 }
 
-/* Medium devices (landscape phones, 568px and up) */
+/* Medium devices ) */
 @media only screen and (min-width: 321px) and (max-width: 568px) {
 
   .hero__img{
@@ -133,7 +133,7 @@
   }
 }
 
-/* Large devices (tablets, 768px and up) */
+/* Large devices  */
 @media only screen and (min-width: 569px) and (max-width: 768px) {
   .hero {
     padding: 3rem;

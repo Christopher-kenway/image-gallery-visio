@@ -19,12 +19,11 @@ const Signup = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Navigate to '/' after successful signup
+      navigate("/");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.error(errorCode, errorMessage); // Log the error
-      // Handle error appropriately
     }
   };
 

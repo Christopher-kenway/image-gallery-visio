@@ -11,7 +11,6 @@ const ImageGallery = ({ searchText }) => {
   // State to hold filtered images
   const [filteredImages, setFilteredImages] = useState([]);
 
-  // Filter images based on search text
   useEffect(() => {
     if (docs && docs.length > 0) {
       // Filter based on searchText
