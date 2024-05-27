@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const Herosection = () => {
   return (
-    <div className="hero mt-8 md:container md:mx-auto">
+    <div className="hero mt-8">
       <img
         src="https://i.pinimg.com/236x/f5/7a/68/f57a6836cab1bcbe917f3dfdd1386b7d.jpg"
         className="hero__img"
       />
-      <div className="hero-content w-3/6">
+      <div className="hero-content">
         <p className="text__info text-5xl">
           <strong className="mr-3">Every Picture</strong>
           Has its own Fortune to tell

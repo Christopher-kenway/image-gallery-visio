@@ -14,6 +14,7 @@ const ImageGallery = ({ searchText }) => {
   // Filter images based on search text
   useEffect(() => {
     if (docs && docs.length > 0) {
+      // Filter based on searchText
       const filtered = docs.filter(
         (doc) =>
           (doc.title &&

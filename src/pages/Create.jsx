@@ -31,6 +31,7 @@ const Create = () => {
       return;
     }
     startUpload(fileToUpload, title, description);
+    setChosenFile(null);
   };
 
   const handleEditClick = () => {
@@ -62,9 +63,10 @@ const Create = () => {
             >
               Edit
             </button>
+
             <button
               type="submit"
-              className="btn upload__btn gap-3 relative"
+              className="btn upload__btn gap-3 relative mt-3"
               disabled={!chosenFile || progress > 0}
             >
               Upload

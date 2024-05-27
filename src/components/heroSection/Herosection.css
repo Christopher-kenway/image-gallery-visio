@@ -77,3 +77,80 @@
     transform: translateY(0);
   }
 }
+
+/* Small devices (phones, 320px and up) */
+@media only screen and (max-width: 320px) {
+  .hero__img{
+    width: 80px;
+    height: 100px;
+  }
+
+  .hero-content {
+    display: inline-block;
+    animation-duration: 1.2s;
+    font-size: .7rem;
+    height: 12rem;
+  }
+  
+  .hero-content span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: .5rem;
+    gap: 2rem;
+  }
+  
+  .text__info{
+    font-size: .6rem;
+  }
+}
+
+/* Medium devices (landscape phones, 568px and up) */
+@media only screen and (min-width: 321px) and (max-width: 568px) {
+
+  .hero__img{
+    width: 100px;
+    height: 140px;
+  }
+
+  .hero-content {
+    animation-duration: 1.2s;
+    font-size: 1rem;
+  }
+  
+  .hero-content span {
+    display: flex;
+    flex-direction: column;
+        align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    gap: 2rem;
+  }
+  
+  .text__info{
+    font-size: 1.2rem;
+  }
+}
+
+/* Large devices (tablets, 768px and up) */
+@media only screen and (min-width: 569px) and (max-width: 768px) {
+  .hero {
+    padding: 3rem;
+  }
+
+  .hero__img,
+  .img2 {
+    width: 150px;
+    height: 200px;
+  }
+
+  .hero-content {
+    animation-duration: 1.5s;
+    font-size: 1rem;
+}
+
+  .text__info{
+    font-size: 2rem;
+  }
+}

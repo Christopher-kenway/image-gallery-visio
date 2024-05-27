@@ -50,3 +50,17 @@
   margin: 0.5rem 0;
   font-weight: bold;
 }
+
+/* Breakpoint for screens up to 768px */
+@media only screen and (max-width: 768px) {
+  .image__card {
+    width: 90%;
+  }
+}
+
+/* Breakpoint for screens up to 568px */
+@media only screen and (max-width: 568px) {
+  .image__card {
+    width: 90%; 
+  }
+}

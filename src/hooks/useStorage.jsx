@@ -18,18 +18,16 @@ const useStorage = () => {
   const myRef = useRef(null);
   console.log(user);
   // Function to start the file upload
-  const startUpload = async (file, title, description, username) => {
+  const startUpload = async (file, title, description) => {
     if (!file) {
       setError("No file selected.");
       return;
     }
 
     try {
-      // Initialize Firebase storage
       const storage = getStorage();
       // Create a reference to the storage location where the file will be uploaded
       const storageRef = ref(storage, `images/${file.name}`);
-      // Create a task to upload the file
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       // Listen for state changes, errors, and completion of the upload
