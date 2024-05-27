@@ -1,3 +1,5 @@
+/* Modal.css */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -6,27 +8,61 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
   justify-content: center;
-  opacity: 0; /* Start with opacity 0 */
-  visibility: hidden; /* Start with visibility hidden */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transition for opacity and visibility */
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
 
 .backdrop.show {
-  opacity: 1; /* Set opacity to 1 when show class is added */
-  visibility: visible; /* Set visibility to visible when show class is added */
+  opacity: 1;
 }
 
 .backdrop img {
   max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  border: 2px solid white;
-  transform: scale(0.7);
-  transition: transform 0.3s ease; /* Added transition for transform */
+  max-height: 80%;
+  border-radius: 10px;
 }
 
-.backdrop.show img {
-  transform: scale(1); /* Scale image to 1 when modal is shown */
+.share-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.share-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.share-icons {
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.share-icons.show {
+  opacity: 1;
+}
+
+.share-icons a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.share-icons a:hover {
+  color: #1da1f2; 
+  transform: scale(1.1);
 }

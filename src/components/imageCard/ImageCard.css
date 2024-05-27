@@ -26,7 +26,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   opacity: 0;
   display: flex;
@@ -43,4 +43,10 @@
 
 .card__Details.visible {
   opacity: 1;
+}
+
+.card__Details p {
+  font-family: "Space Grotesk", sans-serif; 
+  margin: 0.5rem 0;
+  font-weight: bold;
 }

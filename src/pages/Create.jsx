@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import useStorage from "../hooks/useStorage";
+import EditImageModal from "../components/modals/EditImageModal";
 import "../pages styles/Create.css";
 
 const Create = () => {
   const [chosenFile, setChosenFile] = useState(null);
+  const [editedImage, setEditedImage] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [showEditModal, setShowEditModal] = useState(false);
   const { startUpload, progress } = useStorage();
 
   const handleFileChange = (e) => {
@@ -15,19 +18,33 @@ const Create = () => {
     }
   };
 
+  const handleSaveEditedImage = (imageUrl) => {
+    setEditedImage(imageUrl);
+    setShowEditModal(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!chosenFile) {
+    const fileToUpload = editedImage || chosenFile;
+    if (!fileToUpload) {
       window.alert("No file selected");
       return;
     }
-    startUpload(chosenFile, title, description);
+    startUpload(fileToUpload, title, description);
+  };
+
+  const handleEditClick = () => {
+    if (chosenFile) {
+      setShowEditModal(true);
+    } else {
+      window.alert("Please select a file first");
+    }
   };
 
   return (
     <div>
       <Navbar />
-      <div className=" mt-10">
+      <div className="mt-10">
         <form onSubmit={handleSubmit}>
           <div className="upload__input">
             <input
@@ -37,6 +54,14 @@ const Create = () => {
               multiple={false}
               className="file-input file-input-bordered mb-5"
             />
+            <button
+              type="button"
+              className="btn edit__btn gap-3"
+              onClick={handleEditClick}
+              disabled={!chosenFile || progress > 0}
+            >
+              Edit
+            </button>
             <button
               type="submit"
               className="btn upload__btn gap-3 relative"
@@ -69,6 +94,13 @@ const Create = () => {
           </div>
         </form>
       </div>
+      {showEditModal && (
+        <EditImageModal
+          selectedImg={URL.createObjectURL(chosenFile)}
+          onSave={handleSaveEditedImage}
+          onClose={() => setShowEditModal(false)}
+        />
+      )}
     </div>
   );
 };

@@ -20,7 +20,7 @@ const ImageGallery = () => {
             <ImageCard
               key={image.url}
               image={image}
-              setSelectedImg={setSelectedImg} // Pass the setter function
+              setSelectedImg={setSelectedImg}
             />
           ))}
         </div>
