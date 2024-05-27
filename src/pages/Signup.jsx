@@ -81,8 +81,8 @@ const Signup = () => {
                   required
                 />
               </div>
-              <div className="form-control">
-                <button type="submit" className="sign__btn">
+              <div className="form-control text-center">
+                <button type="submit" className="sign__btn w-full">
                   Sign Up
                 </button>
               </div>

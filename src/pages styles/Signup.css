@@ -5,8 +5,6 @@
   border-radius: 15px;
  
 }
-
-
 .sign__hero-content h1 {
   font-weight: 400;
   font-style: normal;
@@ -30,7 +28,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Card styling */
 .sign__card{
   background-color: #ffffff; 
   border: 1px solid rgb(199, 199, 199);
@@ -44,9 +41,9 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Form control styling */
+
 .form-control {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .label {
@@ -70,7 +67,6 @@
   box-shadow: 0px 0px 3px rgba(255, 51, 218, 0.2);
 }
 
-/* Button styling */
 .sign__btn {
   background-color: #7296a4; 
   padding: .5rem;
@@ -82,5 +78,5 @@
 }
 
 .sign__btn:hover {
-  background-color: #33abad;
+  background-color: #0e2323;
 }
