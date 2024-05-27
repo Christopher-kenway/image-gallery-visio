@@ -11,6 +11,7 @@ const Home = ({ setTerm }) => {
   return (
     <div>
       <Navbar searchText={(text) => setTerm(text)} />
+
       <Herosection />
       {/* <Footer /> */}
     </div>

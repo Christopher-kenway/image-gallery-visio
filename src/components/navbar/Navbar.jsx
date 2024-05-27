@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
+import "./Navbar.css";
 
 const Navbar = ({ searchText }) => {
   const [text, setText] = useState("");
+  const location = useLocation();
 
   const handleLogout = async () => {
     try {
@@ -15,28 +16,34 @@ const Navbar = ({ searchText }) => {
   };
 
   return (
-    <nav className="navbar justify-between">
-      <Link to="/" className="logo text-4xl cursor-pointer font-bold">
+    <div className="navbar p-3">
+      <Link to="/" className="logo text-4xl font-bold">
         Visio
       </Link>
       <ul className="nav__links">
         <li>
-          <Link to="/" className="">
+          <Link to="/" className={location.pathname === "/" ? "active" : ""}>
             Home
           </Link>
         </li>
         <li>
-          <Link to="/gallery" className="">
+          <Link
+            to="/gallery"
+            className={location.pathname === "/gallery" ? "active" : ""}
+          >
             Gallery
           </Link>
         </li>
         <li>
-          <Link to="/create" className="">
+          <Link
+            to="/create"
+            className={location.pathname === "/create" ? "active" : ""}
+          >
             Create
           </Link>
         </li>
       </ul>
-      <div className="flex-end gap-2 mt-4">
+      <div className="gap-2">
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
@@ -45,15 +52,12 @@ const Navbar = ({ searchText }) => {
           >
             <div className="w-10 rounded-full">
               <img
-                alt="Tailwind CSS Navbar component"
+                alt="Profile"
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
               />
             </div>
           </div>
-          <ul
-            tabIndex={0}
-            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-          >
+          <ul tabIndex={0} className="dropdown-content">
             <li>
               <button className="justify-between">
                 Profile
@@ -61,15 +65,12 @@ const Navbar = ({ searchText }) => {
               </button>
             </li>
             <li>
-              <button>Settings</button>
-            </li>
-            <li>
               <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

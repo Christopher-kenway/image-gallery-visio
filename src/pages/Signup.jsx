@@ -33,7 +33,7 @@ const Signup = () => {
       <form onSubmit={handleSubmit} className="hero min-h-screen">
         <div className="sign__hero-content flex-col">
           <div className="text-center">
-            <h1 className="font-bold mt-1">visio</h1>
+            <h1 className="font-bold">visio</h1>
             <p className="py-6">
               "Go beyond storage. Organize, personalize & share - your photos,
               your story."
@@ -81,7 +81,7 @@ const Signup = () => {
                   required
                 />
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control">
                 <button type="submit" className="sign__btn">
                   Sign Up
                 </button>
