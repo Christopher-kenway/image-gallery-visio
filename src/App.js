@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import Gallery from "./pages/Gallery";
 import Create from "./pages/Create";
 import { AuthProvider } from "./context/Auth";
@@ -12,7 +13,6 @@ import './App.css'
 function App() {
   return (
     <AuthProvider>
-     
       <div className="max-w-7xl mx-auto">
         <Routes>
           <Route path="/" element={
@@ -25,8 +25,21 @@ function App() {
               <Signup />
             </PublicRoutes>
           } />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/create" element={<Create />} />
+          <Route path="/login" element={
+            <PublicRoutes>
+              <Login />
+            </PublicRoutes>
+          } />
+          <Route path="/gallery" element={
+            <PrivateRoutes>
+              <Gallery />
+            </PrivateRoutes>
+          } />
+          <Route path="/create" element={
+            <PrivateRoutes>
+              <Create />
+            </PrivateRoutes>
+          } />
         </Routes>
       </div>
     </AuthProvider>

@@ -6,7 +6,7 @@ const PublicRoutes = ({ children }) => {
   const { user } = useAuth();
 
   if (user) {
-    return <Navigate to="/" replace={true} />;
+    return <Navigate to="/" replace />;
   }
 
   return children;

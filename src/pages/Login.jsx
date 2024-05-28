@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { auth } from "../firebase/firebaseConfig";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import "../pages styles/Signup.css";
+import { Link, useLocation } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
 
   const navigate = useNavigate();
 
@@ -15,12 +15,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      await updateProfile(userCredential.user, { displayName });
+      await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error) {
       const errorCode = error.code;
@@ -42,19 +37,6 @@ const Signup = () => {
           </div>
           <div className="sign__card shrink-0 w-full max-w-sm">
             <div className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Username</span>
-                </label>
-                <input
-                  type="text"
-                  value={displayName}
-                  onChange={(e) => setDisplayName(e.target.value)}
-                  placeholder="Username"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -83,8 +65,13 @@ const Signup = () => {
               </div>
               <div className="form-control text-center">
                 <button type="submit" className="sign__btn w-full">
-                  Sign Up
+                  Login
                 </button>
+                <Link to="/Signup">
+                  <button type="submit" className="sign__btn w-full mt-4">
+                    Sign Up
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -94,4 +81,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
